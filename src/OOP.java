@@ -11,7 +11,7 @@ class OOP {
             for (int j = 0; j < array[i].length; j++) {
                 array[i][j] = random.nextInt();
             }
-        }
+        };
         System.out.println("Array: "
                 + Arrays.deepToString(array));
     }
