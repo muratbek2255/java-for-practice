@@ -1,3 +1,8 @@
+package firstpackage;
+
+;
+
+
 class Box2 {
     double width;
     double height;
@@ -87,7 +92,7 @@ class Recursion {
     public static void main(String args[]){
         Factorial f = new Factorial();
 
-        System.out.println("Factorial = " + f.fact(4));
+        System.out.println("firstpackage.Factorial = " + f.fact(4));
     }
 }
 
@@ -279,5 +284,89 @@ class DemoSuper {
         vol = myclone.volume();
         System.out.println("Обьем равен: " + vol);
         System.out.println("Weight of box" + myclone.weight);
+    }
+}
+
+
+class Shipment extends BoxWeight {
+    double cost;
+
+    Shipment(Shipment ob) {
+        super(ob);
+        cost = ob.cost;
+    }
+
+    Shipment(double w, double h, double d, double m, double c) {
+        super(w, h, d, m);
+        cost = c;
+    }
+
+    Shipment() {
+        super();
+        cost = -1;
+    }
+
+    Shipment(double len, double m, double c) {
+        super(len, m);
+        cost = c;
+    }
+}
+
+
+class DemoShipment {
+    public static void main(String[] args) {
+        Shipment shipment1 = new Shipment(15, 20, 10, 24.2, 43);
+        Shipment shipment2 = new Shipment(7, 8, 9, 9.5, 12.4);
+
+        double vol;
+
+        vol = shipment1.volume();
+        System.out.println("Обьем равен: " + vol);
+        System.out.println("Weight of box: " + shipment1.weight);
+        System.out.println("Cost of box: " + shipment1.cost);
+        System.out.println();
+
+        vol = shipment2.volume();
+        System.out.println("Обьем равен: " + vol);
+        System.out.println("Weight of box: " + shipment2.weight);
+        System.out.println("Cost of box: " + shipment2.cost);
+    }
+}
+
+
+abstract class Figure {
+    double dim1;
+    double dim2;
+
+    Figure(double a, double b) {
+        dim1 = a;
+        dim2 = b;
+    }
+
+    abstract double area();
+}
+
+
+class Triangle extends Figure {
+    Triangle (double a, double b) {
+        super(a, b);
+    }
+
+    double area() {
+        System.out.println("В области четырехугольника");
+        return dim1 * dim2 / 2;
+    }
+}
+
+
+class DemoTriangle {
+    public static void main(String[] args) {
+        Triangle trian = new Triangle(3, 4);
+
+        Figure figref;
+
+        figref = trian;
+
+        System.out.println("Площадь: " + figref.area());
     }
 }

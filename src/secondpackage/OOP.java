@@ -1,4 +1,5 @@
-import javax.lang.model.type.MirroredTypeException;
+package secondpackage;
+
 import java.util.Arrays;
 import java.util.Random;
 

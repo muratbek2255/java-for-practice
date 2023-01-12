@@ -1,3 +1,5 @@
+package thirdpackage;
+
 class Example {
     public static void main(String[] args){
         System.out.println("Это программа что то делает");
@@ -172,7 +174,7 @@ class Average {
 
         for(i = 0; i < 5; i++) {
             result = result + nums[i];
-            System.out.println("Average: " + result/5);
+            System.out.println("thirdpackage.Average: " + result/5);
         }
     }
 }
