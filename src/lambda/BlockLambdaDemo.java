@@ -1,0 +1,16 @@
+package lambda;
+
+public class BlockLambdaDemo {
+    public static void main(String[] args) {
+        NumericFunc factorial = (n) -> {
+            int result = 1;
+
+            for (int i = 0; i <= n ; i++)
+                result = i * result;
+
+            return result;
+        };
+
+        System.out.println("Факториал равен 3: " + factorial.func(3));
+    }
+}
